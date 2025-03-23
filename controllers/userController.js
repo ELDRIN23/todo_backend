@@ -27,10 +27,12 @@ export const updateTask = async(req,res)=>{
    try {
       const {id} = req.params; //to get the id
       const {task} = req.body  //to get the content what to be changed
-      const updatedTask = await task.findByIdAndUpdate
+      const updatedTask = await task.findByIdAndUpdate(id, {task}, {new: true})
 
       res.status(201).json(updateTask)
    } catch (err) {
       res.status(500).json({err:"failed to update tasks"})
    }
 }
+
+//delete task
