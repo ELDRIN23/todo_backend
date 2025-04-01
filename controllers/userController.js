@@ -1,4 +1,4 @@
-import { Router } from "express";
+// import { Router } from "express";
 import User from "../models/userModel.js";
 
 
@@ -15,7 +15,7 @@ export const createTask = async(req,res)=>{
       })
       res.status(201).json({newTask,message:"task added succesfully"})
    } catch (err) {
-      res.status(500).json({err:"Internal server Error"})
+      res.status(500).json({meaasage:"Internal server Error"})
 
    }
 };
@@ -28,7 +28,7 @@ export const getAllTasks = async(req,res)=>{
       //console.log(tasks);
       res.status(200).json(tasks)
    } catch (err) {
-      res.status(500).json({err:"Internal server Error"})
+      res.status(500).json({meaasage:"Internal server Error"})
    }
 }
 
@@ -53,19 +53,20 @@ export const updateTask = async(req,res)=>{
       if(!updatedTask){
          res.status(404).json({message:"task not found"})
       }
-
-      if(task.trim()){
-         updatedTask.task.trim()
-      }
       
       if(status.trim()){
          updatedTask.status.trim()
       }
+
+      if(task.trim()){
+         updatedTask.task.trim()
+      }
+
       updatedTask.save()
 
       res.status(201).json({updatedTask,message:"task updated succesfully"})
    } catch (err) {
-      res.status(500).json({err:"Internal server Error"})
+      res.status(500).json({message:"Internal server Error"})
    }
 }
 
@@ -88,10 +89,10 @@ export const deleteTask = async(req,res)=>{
 
       res.status(201).json({message:"task deleted succesfully"})
    } catch (err) {
-      res.status(500).json({err:"Internal server Error"})
+      res.status(500).json({message:"Internal server Error"})
    }
 };
 
 
 
-//eldrinTodo
+//eldrinTodo//
