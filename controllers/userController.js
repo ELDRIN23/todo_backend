@@ -5,7 +5,9 @@ import User from "../models/userModel.js";
 
 //create a new task
 export const createTask = async(req,res)=>{
+   
    try {
+      // console.log("createTask")
       const {task} = req.body;
       if(!task.trim()){
          return res.status(400).json({err:"task is required"})
@@ -32,6 +34,20 @@ export const getAllTasks = async(req,res)=>{
    }
 }
 
+//fetch single task
+export const getTaskId = async(req,res)=>{
+   try {
+      const {id} = req.params;
+      const tasks = await User.findById(id)
+      if(!id){
+         return res.status(404).json({meaasage:"id not found"})
+      }
+      //console.log(tasks);
+      res.status(200).json(tasks)
+   } catch (err) {
+      res.status(500).json({meaasage:"Internal server Error"})
+   }
+}
 
 //update task
 export const updateTask = async(req,res)=>{
@@ -51,7 +67,7 @@ export const updateTask = async(req,res)=>{
       //   3rd parameter =>to send the new updated data to change in the DB
 
       if(!updatedTask){
-         res.status(404).json({message:"task not found"})
+         return res.status(404).json({message:"task not found"})
       }
       
       if(status.trim()){
