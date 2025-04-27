@@ -20,7 +20,7 @@ userRouter.post("/create", createTask);
 userRouter.get("/fetch-all", getAllTasks);
 
 //get single tasks
-userRouter.get("/task/:taskId", getTaskId);
+userRouter.get("/task/:id", getTaskId);
 
 //update task
 userRouter.post("/updateTask/:taskId", updateTask);
