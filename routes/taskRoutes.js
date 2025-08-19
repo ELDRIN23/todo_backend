@@ -16,10 +16,10 @@ userRouter.post("/create", createTask);
 userRouter.get("/fetch-all", getAllTasks);
 
 //update task
-userRouter.post("/updateTask/:taskId", updateTask);
+userRouter.post("/updateTask/:id", updateTask);
 
 //delete task
-userRouter.delete("/deleteTask/:taskId", deleteTask);
+userRouter.delete("/deleteTask/:id", deleteTask);
 
 toggleStatus;
 userRouter.post("/toggleStatus/:id", toggleStatus);

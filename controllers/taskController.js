@@ -65,14 +65,14 @@ export const updateTask = async (req, res) => {
 //delete task
 export const deleteTask = async(req,res)=>{
    try {
-      const {taskId} = req.params;
-      //console.log(taskId)
+      const {id} = req.params;
+      //console.log(id);
 
-      if(!taskId){
+      if(!id){
         return res.status(404).json({message:"task id not found"})
       }
 
-      const deletedTask = await Task.findByIdAndDelete(taskId);
+      const deletedTask = await Task.findByIdAndDelete(id);
 
       if(!deletedTask){
        return  res.status(400).json({message:"task not found || already deleted" })
@@ -98,7 +98,6 @@ export const toggleStatus = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 
 
 //eldrinTodo//
