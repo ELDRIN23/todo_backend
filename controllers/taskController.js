@@ -29,7 +29,7 @@ export const getAllTasks = async (req, res) => {
     const tasks = await Task.find({ user: req.user.id }).sort({
       createdAt: -1,
     });
-    console.log('Found tasks:', tasks);
+    // console.log('Found tasks:', tasks);
     
     if (!tasks || tasks.length === 0) {
       return res.status(200).json([]);
@@ -110,4 +110,4 @@ export const toggleStatus = async (req, res) => {
   }
 };
 
-//eldrinTodo//
+//eldrinTodo////

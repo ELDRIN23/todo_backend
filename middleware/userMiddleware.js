@@ -22,7 +22,7 @@ export const userMiddleware = (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // decoded has { id, role }
-    console.log("req.user:", req.user);
+    // console.log("req.user:", req.user);
     next();
   } catch (error) {
     console.error(error);
