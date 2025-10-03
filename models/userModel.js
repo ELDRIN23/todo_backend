@@ -13,6 +13,8 @@ const userShema = new mongoose.Schema({
         type: String,
         required: true
     },
+
+    
 });
 
 export default mongoose.model("User", userShema);

@@ -6,22 +6,23 @@ import {
   deleteTask,
   toggleStatus,
 } from "../controllers/taskController.js";
+import { userMiddleware } from "../middleware/userMiddleware.js";
 
-const userRouter = express.Router();
+const TaskRouter = express.Router();
 
 //create
-userRouter.post("/create", createTask);
+TaskRouter.post("/create", userMiddleware, createTask);
 
 //fetch all tasks
-userRouter.get("/fetch-all", getAllTasks);
+TaskRouter.get("/fetch-all", userMiddleware, getAllTasks);
 
 //update task
-userRouter.post("/updateTask/:id", updateTask);
+TaskRouter.post("/updateTask/:id", userMiddleware, updateTask);
 
 //delete task
-userRouter.delete("/deleteTask/:id", deleteTask);
+TaskRouter.delete("/deleteTask/:id", userMiddleware, deleteTask);
 
-toggleStatus;
-userRouter.post("/toggleStatus/:id", toggleStatus);
+// toggleStatus;
+TaskRouter.post("/toggleStatus/:id", userMiddleware, toggleStatus);
 
-export default userRouter;
+export default TaskRouter;
