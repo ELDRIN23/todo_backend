@@ -22,7 +22,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://todo-frontend-ten-wine.vercel.app",
+      "https://eldrintodo.vercel.app/",
       "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app",
       "https://todo-frontend-e0ok4mxfa-eldrin-johnsons-projects.vercel.app"
     ],
