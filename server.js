@@ -23,15 +23,14 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://todo-frontend-ten-wine.vercel.app",
-      "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app/",
-      "https://todo-frontend-e0ok4mxfa-eldrin-johnsons-projects.vercel.app/",
-      "*"
-      
+      "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app",
+      "https://todo-frontend-e0ok4mxfa-eldrin-johnsons-projects.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 
 // Routes
