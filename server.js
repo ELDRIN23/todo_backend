@@ -20,11 +20,16 @@ app.use(cookieParser());
 // CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://todo-frontend-ten-wine.vercel.app",
+      
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 // Routes
 app.use("/tasks", TaskRouter);
