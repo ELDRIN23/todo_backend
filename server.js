@@ -18,19 +18,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS
-app.options("*", cors({
-  origin: [
-    "http://localhost:5173",
-    "https://eldrintodo.vercel.app/",
-    "https://todo-frontend-eldrin-johnsons-projects.vercel.app/",
-    "https://todo-frontend-e0ok4mxfa-eldrin-johnsons-projects.vercel.app",
-    "https://eldrintodo.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://eldrintodo.vercel.app/",
+      "https://todo-frontend-eldrin-johnsons-projects.vercel.app/",
+      "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app/",
+      "*"
+      
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 
 // Routes
