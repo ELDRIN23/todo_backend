@@ -22,16 +22,17 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://eldrintodo.vercel.app/",
-      "https://todo-frontend-eldrin-johnsons-projects.vercel.app/",
-      "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app/",
-      "*"
-      
+      "https://eldrintodo.vercel.app",
+      "https://todo-frontend-eldrin-johnsons-projects.vercel.app",
+      "https://todo-frontend-git-main-eldrin-johnsons-projects.vercel.app"
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
+
+app.options("*", cors());
 
 
 // Routes
