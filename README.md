@@ -57,10 +57,7 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
 # 5️⃣ Start the server
-npm run dev
-
-
-Backend will run on 👉 http://localhost:5000
+npm run dev || npm start (nodemon)
 
 📁 Folder Structure
 eldrinTodo-backend/
@@ -110,4 +107,4 @@ This project is licensed under the MIT License – see the LICENSE
 
 Eldrin Johnson
 🚀 Backend Developer | Node.js & Security Enthusiast
-📫 [Your LinkedIn or Portfolio link here]
+📫 https://www.linkedin.com/in/eldrin-johnson
